@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Abutility</string>
+    <string name="information">Message</string>
+    <string name="exit_tittle_string">Do you want to Exit?</string>
+    <string name="ok_string">OK</string>
+    <string name="cancel_string">Cancel</string>
+</resources>
