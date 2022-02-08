@@ -2,6 +2,7 @@ package com.abir.utility;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -261,5 +262,14 @@ public class Utility {
     public void clearlocalinfo(String database) {
         SharedPreferences sharedPref = context.getSharedPreferences(database, Context.MODE_PRIVATE);
         sharedPref.edit().clear().commit();
+    }
+
+    public void restartApp(){
+        PackageManager packageManager = context.getPackageManager();
+        Intent intent = packageManager.getLaunchIntentForPackage(context.getPackageName());
+        ComponentName componentName = intent.getComponent();
+        Intent mainIntent = Intent.makeRestartActivityTask(componentName);
+        context.startActivity(mainIntent);
+        Runtime.getRuntime().exit(0);
     }
 }
